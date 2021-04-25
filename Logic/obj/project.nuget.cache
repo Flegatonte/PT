@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "F6u0lG5ORLEnEtUdYiYaRVJAB35MIhJ8bLyHIbVZZy33iy4fvRvPsx0S8u+GopwfXxbeWd2hObke7eT7mfXB+g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\glori\\Documents\\GitHub\\PT\\Logic\\Logic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\glori\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\glori\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
