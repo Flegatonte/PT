@@ -6,25 +6,25 @@ namespace DL
 {
     public class Event
     {
-        public enum EventKind
+        public enum EventState
         {
-            Return,
-            Borrow
+            Returned,
+            Borrowed
         }
 
         public int UserID { get; set; }
         public int MovieID { get; set; }
         public int EventID { get; set; }
         public DateTime Date { get; set; }
-        public EventKind Kind { get; set; }
+        public EventState State { get; set; }
 
-        public Event(int userID, int movieID, int eventID, DateTime date, EventKind eventKind)
+        public Event(int userID, int movieID, int eventID, DateTime date, EventState eventState)
         {
             UserID = userID;
             MovieID = movieID;
             EventID = eventID;
             Date = date;
-            Kind = eventKind;
+            State = eventState;
         }
 
         public override bool Equals(object obj)
@@ -35,11 +35,11 @@ namespace DL
             }
 
             Event e = (Event)obj;
-            return UserID == e.UserID && Date == e.Date && MovieID == e.MovieID && EventID == e.EventID && Kind == e.Kind;
+            return UserID == e.UserID && Date == e.Date && MovieID == e.MovieID && EventID == e.EventID && State == e.State;
         }
 
         public override int GetHashCode()
         {
-            return UserID.GetHashCode() ^ MovieID.GetHashCode() ^ EventID.GetHashCode() ^ Date.GetHashCode() ^ Kind.GetHashCode();
+            return UserID.GetHashCode() ^ MovieID.GetHashCode() ^ EventID.GetHashCode() ^ Date.GetHashCode() ^ State.GetHashCode();
     }
 }

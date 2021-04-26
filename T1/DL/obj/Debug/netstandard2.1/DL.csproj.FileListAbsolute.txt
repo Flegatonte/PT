@@ -1,0 +1,4 @@
+C:\Users\glori\Documents\GitHub\PT\T1\DL\obj\Debug\netstandard2.1\DL.csprojAssemblyReference.cache
+C:\Users\glori\Documents\GitHub\PT\T1\DL\obj\Debug\netstandard2.1\DL.AssemblyInfoInputs.cache
+C:\Users\glori\Documents\GitHub\PT\T1\DL\obj\Debug\netstandard2.1\DL.AssemblyInfo.cs
+C:\Users\glori\Documents\GitHub\PT\T1\DL\obj\Debug\netstandard2.1\DL.csproj.CoreCompileInputs.cache
