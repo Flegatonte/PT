@@ -19,7 +19,7 @@ namespace DL
             Western
         }
 
-        public Movie(int IMDB, string title, string director, int year, BookGenre genre, int duration)
+        public Movie(int IMDB, string title, string director, int year, MovieGenre genre, int duration)
         {
             this.IMDB = IMDB;
             Title = title;
