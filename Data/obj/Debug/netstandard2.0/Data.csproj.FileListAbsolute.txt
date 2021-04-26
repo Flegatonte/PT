@@ -1,9 +1,0 @@
-C:\Users\glori\Documents\GitHub\PT\Data\bin\Debug\netstandard2.0\Data.deps.json
-C:\Users\glori\Documents\GitHub\PT\Data\bin\Debug\netstandard2.0\Data.dll
-C:\Users\glori\Documents\GitHub\PT\Data\bin\Debug\netstandard2.0\Data.pdb
-C:\Users\glori\Documents\GitHub\PT\Data\obj\Debug\netstandard2.0\Data.csprojAssemblyReference.cache
-C:\Users\glori\Documents\GitHub\PT\Data\obj\Debug\netstandard2.0\Data.AssemblyInfoInputs.cache
-C:\Users\glori\Documents\GitHub\PT\Data\obj\Debug\netstandard2.0\Data.AssemblyInfo.cs
-C:\Users\glori\Documents\GitHub\PT\Data\obj\Debug\netstandard2.0\Data.csproj.CoreCompileInputs.cache
-C:\Users\glori\Documents\GitHub\PT\Data\obj\Debug\netstandard2.0\Data.dll
-C:\Users\glori\Documents\GitHub\PT\Data\obj\Debug\netstandard2.0\Data.pdb
