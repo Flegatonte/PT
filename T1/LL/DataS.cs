@@ -86,7 +86,7 @@ namespace LL
             return repository.GetEventById(id);
         }
 
-        //ADD 
+        
         public void AddMovie(Movie movie)
         {
             repository.AddMovie(movie);
@@ -97,7 +97,7 @@ namespace LL
             repository.AddUser(user);
         }
 
-        //EDIT
+        
         public void EditMovie(Movie movie)
         {
             repository.UpdateMovieInfo(movie);
@@ -112,7 +112,7 @@ namespace LL
         {
             repository.UpdateEventInfo(e);
         }
-        //REMOVE
+        
         public void DeleteMovie(int id)
         {
             repository.DeleteMovie(id);
@@ -122,7 +122,7 @@ namespace LL
         {
             repository.DeleteUser(id);
         }
-        //STATE
+        
         public void UpdateStock(int movieId, int newAmount)
         {
             repository.UpdateBookState(movieId, newAmount);
