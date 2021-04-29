@@ -17,7 +17,7 @@ namespace LL
 
         public Dictionary<int, Movie> GetMovieCatalog();
         {
-            Dictionay<int, Movie> movies = repository.GetAllBooks();
+            Dictionay<int, Movie> movies = repository.GetAllMovies();
          if (movies.Count == 0)
             {
                 return null;
@@ -34,7 +34,7 @@ namespace LL
 
                 public List<Users> GetAllUsers()
                 {
-                    List<Users> readers = repository.GetAllUsers();
+                    List<Users> users = repository.GetAllUsers();
                     if (users.Count == 0)
                     {
                         return null;
@@ -66,12 +66,12 @@ namespace LL
             return repository.GetAllEventsNumber();
         }
     
-        public Book GetMovieById(int id)
+        public Movie GetMovieById(int id)
         {
             return repository.GetMovieById(id);
         }
 
-        public Book GetMovieByGenre(MovieGenre genre)
+        public Movie GetMovieByGenre(MovieGenre genre)
         {
             return repository.GetMovieByGenre(genre);
         }
@@ -125,7 +125,7 @@ namespace LL
         
         public void UpdateStock(int movieId, int newAmount)
         {
-            repository.UpdateBookState(movieId, newAmount);
+            repository.UpdateMovieState(movieId, newAmount);
         }
 
         public Dictionary<int, int> GetAllAvailableMovies()
@@ -172,7 +172,7 @@ namespace LL
         {
             var currentMovieState = repository.GetAmountOfAvailableCopiesById(movieId);
             var user = repository.GetUserById(userId);
-            var userMovies = reader.AmountOfMoviesBorrowed;
+            var userMovies = user.AmountOfMoviesBorrowed;
 
             if (userMovies == 0)
             {
@@ -202,7 +202,7 @@ namespace LL
         
         public IEnumerable<Event> GetEventsForUser(int userId)
         {
-            var user = repository.GetReaderById(userId);
+            var user = repository.GetUserById(userId);
             List<Event> events = new List<Event>();
 
             foreach (Event ev in repository.GetAllEvents())
