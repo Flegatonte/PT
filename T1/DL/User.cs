@@ -6,7 +6,7 @@ namespace DL
 {
     public class User
     {
-        public User(string name, string surname, int userID, int phoneNumber)
+        public User(string name, string surname, int userID, string phoneNumber)
         {
             Name = name;
             Surname = surname;
@@ -20,7 +20,7 @@ namespace DL
 
         public int UserID { get; set; }
 
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         public override bool Equals(object obj)
         {
