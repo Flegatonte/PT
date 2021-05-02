@@ -41,5 +41,6 @@ namespace DL
         public override int GetHashCode()
         {
             return UserID.GetHashCode() ^ MovieID.GetHashCode() ^ EventID.GetHashCode() ^ Date.GetHashCode() ^ State.GetHashCode();
+        }
     }
 }

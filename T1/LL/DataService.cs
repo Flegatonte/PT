@@ -1,4 +1,4 @@
-﻿using Data;
+﻿using DL;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,9 +15,9 @@ namespace LL
         }
 
 
-        public Dictionary<int, Movie> GetMovieCatalog();
+        public Dictionary<int, Movie> GetMovieCatalog()
         {
-            Dictionay<int, Movie> movies = dataManager.GetMovieCatalog();
+            Dictionary<int, Movie> movies = dataManager.GetMovieCatalog();
          if (movies.Count == 0)
             {
                 return null;
@@ -27,14 +27,15 @@ namespace LL
                 return movies;
             }
         }
+
         public int GetMoviesCount()
                 {
-                    return data.GetMoviesCount();
+                    return dataManager.GetMoviesCount();
                 }
 
-                public List<Users> GetUsers()
+                public List<User> GetUsers()
                 {
-                    List<Users> users = dataManager.GetUsers();
+                    List<User> users = dataManager.GetUsers();
                     if (users.Count == 0)
                     {
                         return null;
@@ -71,7 +72,7 @@ namespace LL
             return dataManager.GetMovieIMDB(id);
         }
 
-        public Movie GetMoviesGenre(Movie.MovieGenre genre)
+        public List<Movie> GetMoviesGenre(Movie.MovieGenre genre)
         {
             return dataManager.GetMoviesGenre(genre);
         }
@@ -123,19 +124,14 @@ namespace LL
     dataManager.DeleteUser(id);
         }
         
-        public void UpdateStock(Movie movie, int amount)
+        public void UpdateStock(int IMBD, int amount)
         {
-    dataManager.increaseCopies(movie, amount);
+    dataManager.increaseCopies(IMBD, amount);
         }
 
-        public Dictionary<int, int> GetAllAvailables()
+        public List<DVD> GetAllAvailables()
         {
             return dataManager.GetAvailableDVDs();
-        }
-
-        public State GetStateLibrary()
-        {
-            return dataManager.GetState();
         }
 
         public int GetAllAvailablesIMBD(int IMBD)
@@ -163,9 +159,9 @@ namespace LL
                         throw new InvalidOperationException("The movie is not available");
                     }
 
-                    Event e = new Event(userID, eventID, Event.EventState.Borrowed, borrowDate);
+                    Event e = new Event(userID, movieID, eventID, borrowDate, Event.EventState.Borrowed);
     dataManager.AddEvent(e);
-    dataManager.decreaseCopies(int movieID);
+    dataManager.decreaseCopies(movieID, 1);
                     // OnEventUpdateState(movieId, currentMovieState, user, true);
                 }
 
@@ -179,9 +175,9 @@ namespace LL
                 throw new InvalidOperationException("The movie is not available");
             }
 
-            Event e = new Event(userID, eventID, Event.EventState.Returned, borrowDate);
+            Event e = new Event(userID, movieID, eventID, borrowDate, Event.EventState.Borrowed);
             dataManager.UpdateEventInfo(e);
-    dataManager.increaseCopies(int movieID);
+    dataManager.increaseCopies(movieID, 1);
     // OnEventUpdateState(movieId, currentMovieState, user, true);
 }
 
@@ -189,12 +185,12 @@ namespace LL
         
         public IEnumerable<Event> GetEventsForUser(int userID)
         {
-            var user = dataManager.GetUserByID(userId);
+            var user = dataManager.GetUserByID(userID);
             List<Event> events = new List<Event>();
 
             foreach (Event ev in dataManager.GetAllEvents())
             {
-                if (ev.User.Equals(user))
+                if (ev.UserID.Equals(user))
                 {
                     events.Add(ev);
                 }

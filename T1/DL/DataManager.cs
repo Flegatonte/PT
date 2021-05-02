@@ -194,14 +194,14 @@ namespace DL
             throw new Exception("Event with such ID does not exist");
         }
 
-        public void decreaseCopies(int movieID)
+        public void decreaseCopies(int movieID, int amount)
         {
-            data.dvds.Find(x => x.Movie.IMDB == movieID).AvailableCopies -= 1;
+            data.dvds.Find(x => x.Movie.IMDB == movieID).AvailableCopies -= amount;
         }
 
-        public void increaseCopies(int movieID)
+        public void increaseCopies(int movieID, int amount)
         {
-            data.dvds.Find(x => x.Movie.IMDB == movieID).AvailableCopies += 1;
+            data.dvds.Find(x => x.Movie.IMDB == movieID).AvailableCopies += amount;
         }
 
         public void AddEvent(Event e)
@@ -240,7 +240,7 @@ namespace DL
                 if (data.events[i].EventID == e.EventID)
                 {
                     if (data.events[i].State == Event.EventState.Borrowed && e.State == Event.EventState.Returned)
-                        increaseCopies(e.MovieID);
+                        increaseCopies(e.MovieID, 1);
                     data.events[i].Date = e.Date;
                     data.events[i].MovieID = e.MovieID;
                     data.events[i].EventID = e.EventID;

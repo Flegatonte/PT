@@ -1,12 +1,29 @@
 {
   "version": 3,
   "targets": {
-    ".NETStandard,Version=v2.1": {}
+    ".NETStandard,Version=v2.1": {
+      "DL/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/DL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DL.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DL/1.0.0": {
+      "type": "project",
+      "path": "../DL/DL.csproj",
+      "msbuildProject": "../DL/DL.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
-      "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj"
+      "DL >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -15,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\LL\\Logic.csproj",
-      "projectName": "Logic",
-      "projectPath": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\LL\\Logic.csproj",
+      "projectUniqueName": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\LL\\LL.csproj",
+      "projectName": "LL",
+      "projectPath": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\LL\\LL.csproj",
       "packagesPath": "C:\\Users\\glori\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\LL\\obj\\",
+      "outputPath": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\LL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\glori\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -36,8 +53,8 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj": {
-              "projectPath": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj"
+            "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\DL\\DL.csproj": {
+              "projectPath": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\DL\\DL.csproj"
             }
           }
         }
@@ -69,16 +86,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj",
-      "targetGraphs": [
-        ".NETStandard,Version=v2.1"
-      ]
-    }
-  ]
+  }
 }

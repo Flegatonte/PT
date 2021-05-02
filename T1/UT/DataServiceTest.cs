@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Data;
-using Logic;
+using DL;
+using LL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UT
@@ -24,11 +24,11 @@ namespace UT
 
 		// Test for readers
 		[TestMethod]
-		public void AddReaderTest()
+		public void AddUserTest()
 		{
 			Assert.AreEqual(service.GetUsersCount(), 5);
 
-			service.AddUser(new User("Andrea", "Sannino", 102036, "+39-845-5211-76");
+			service.AddUser(new User("Andrea", "Sannino", 102036, "+39-845-5211-76"));
 
 			Assert.AreEqual(service.GetUsersCount(), 6);
 
@@ -36,6 +36,10 @@ namespace UT
 			Assert.AreEqual(users.Count, 6);
 			Assert.IsTrue(users.Exists(r => r.UserID == 102036));
 		}
+	}
+}
+
+		/*
 
 		[TestMethod]
 		[ExpectedException(typeof(System.Exception))]
@@ -84,13 +88,13 @@ namespace UT
 		[TestMethod]
 		public void GetAllUsersTest()
 		{
-			List<Reader> allUsers = service.GetAllUsers();
-			Assert.AreEqual(allReaders.Count, 5);
+			List<User> allUsers = service.GetUsers();
+			Assert.AreEqual(allUsers.Count, 5);
 
-			Assert.IsTrue(allUsers.Exists(r => r.Id == 102036));
-			Assert.IsTrue(allUsers.Exists(r => r.Id == 102033));
-			Assert.IsTrue(allUsers.Exists(r => r.Id == 102032));
-			Assert.IsFalse(allUsers.Exists(r => r.Id == 102));
+			Assert.IsTrue(allUsers.Exists(r => r.UserID == 102036));
+			Assert.IsTrue(allUsers.Exists(r => r.UserID == 102033));
+			Assert.IsTrue(allUsers.Exists(r => r.UserID == 102032));
+			Assert.IsFalse(allUsers.Exists(r => r.UserID == 102));
 		}
 
 
@@ -102,11 +106,12 @@ namespace UT
 			Assert.AreEqual(service.GetUserByID(102030).PhoneNumber, "+48-885-5610-71");
 			Assert.AreEqual(service.GetUserByID(102030).Name, "Adam");
 			Assert.AreEqual(service.GetUserByID(102030).Surname, "Barna");
-			service.UpdateUserInfo(newUserData);
+			service.EditUser(newUserData);
 			Assert.AreEqual(service.GetUserByID(102030).PhoneNumber, "+39-855-5200-76");
 			Assert.AreEqual(service.GetUserByID(102030).Name, "Andy");
 			Assert.AreEqual(service.GetUserByID(102030).Surname, "Bassano");
 		}
+		*/
 
 		/// <summary>
 		/// [TestMethod]
@@ -120,6 +125,7 @@ namespace UT
 
 
 
+		/*
 		// Tests for book catalog
 		[TestMethod]
 		public void AddMovieTest()
@@ -137,6 +143,9 @@ namespace UT
 			service.DeleteMovie(32433234);
 			Assert.AreEqual(service.GetMoviesCount(), 4);
 		}
+	}
+}
+		*/
 
 		/*
 		[TestMethod]
@@ -454,4 +463,3 @@ namespace UT
 		}
 	}
 	*/
-}

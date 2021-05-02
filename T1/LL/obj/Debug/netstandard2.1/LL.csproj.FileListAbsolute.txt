@@ -1,0 +1,12 @@
+C:\Users\glori\source\repos\PT\PTF\T1\LL\obj\Debug\netstandard2.1\LL.csprojAssemblyReference.cache
+C:\Users\glori\source\repos\PT\PTF\T1\LL\obj\Debug\netstandard2.1\LL.AssemblyInfoInputs.cache
+C:\Users\glori\source\repos\PT\PTF\T1\LL\obj\Debug\netstandard2.1\LL.AssemblyInfo.cs
+C:\Users\glori\source\repos\PT\PTF\T1\LL\obj\Debug\netstandard2.1\LL.csproj.CoreCompileInputs.cache
+C:\Users\glori\source\repos\PT\PTF\T1\LL\bin\Debug\netstandard2.1\LL.deps.json
+C:\Users\glori\source\repos\PT\PTF\T1\LL\bin\Debug\netstandard2.1\LL.dll
+C:\Users\glori\source\repos\PT\PTF\T1\LL\bin\Debug\netstandard2.1\LL.pdb
+C:\Users\glori\source\repos\PT\PTF\T1\LL\bin\Debug\netstandard2.1\DL.dll
+C:\Users\glori\source\repos\PT\PTF\T1\LL\bin\Debug\netstandard2.1\DL.pdb
+C:\Users\glori\source\repos\PT\PTF\T1\LL\obj\Debug\netstandard2.1\LL.csproj.CopyComplete
+C:\Users\glori\source\repos\PT\PTF\T1\LL\obj\Debug\netstandard2.1\LL.dll
+C:\Users\glori\source\repos\PT\PTF\T1\LL\obj\Debug\netstandard2.1\LL.pdb

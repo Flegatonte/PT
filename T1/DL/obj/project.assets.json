@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj",
+      "projectUniqueName": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\DL\\DL.csproj",
       "projectName": "DL",
-      "projectPath": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj",
+      "projectPath": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\DL\\DL.csproj",
       "packagesPath": "C:\\Users\\glori\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\obj\\",
+      "outputPath": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\DL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\glori\\AppData\\Roaming\\NuGet\\NuGet.Config",

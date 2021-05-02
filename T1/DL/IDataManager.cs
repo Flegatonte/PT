@@ -22,8 +22,9 @@ namespace DL
         public int GetUsersCount();
         public User GetUserByID(int ID);
         public void UpdateUserInfo(User user);
-        public void AddReader(User user);
-        public void DeleteReader(int userID);
+        public void DeleteUser(int userID);
+
+        public void AddUser(User user);
 
         // Events
         public List<Event> GetAllEvents();
@@ -32,6 +33,9 @@ namespace DL
         public void AddEvent(Event e); // Decrement by one if borrowing event
         public void DeleteEvent(int eventID);
         public void UpdateEventInfo(Event e); // Increment by one if the state changes in Returned
+
+        public void increaseCopies(int movieID, int amount);
+        public void decreaseCopies(int movieID, int amount);
 
         // DVDs
         public List<DVD> GetAvailableDVDs();

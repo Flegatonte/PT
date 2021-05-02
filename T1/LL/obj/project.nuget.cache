@@ -1,18 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W1XqkSaAAFqfAiRrbtYiCczAumdKVeXje6Bf+Eb+wvvdQZ/uuGOoScpw4AbzTUc8X4ZnsdIaQLqAUfgdSF4zhQ==",
-  "success": false,
-  "projectFilePath": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\LL\\Logic.csproj",
+  "dgSpecHash": "OnnnyY7iY/PDReh/MtVA8ldhfRFYRVZN79jzbKsyjTUXdpNabnr6tqPfUYzrX3DH12RaacdpJht2qOUSG645fQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\LL\\LL.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj",
-      "targetGraphs": [
-        ".NETStandard,Version=v2.1"
-      ]
-    }
-  ]
+  "logs": []
 }
