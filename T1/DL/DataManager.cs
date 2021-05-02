@@ -124,7 +124,7 @@ namespace DL
             throw new InvalidOperationException("Such user ID does not exist in the library");
         }
 
-        public void AddReader(User user)
+        public void AddUser(User user)
         {
             for (int i = 0; i < data.users.Count; i++)
             {
@@ -150,7 +150,7 @@ namespace DL
             return res;
         }
 
-        public void DeleteReader(int userID)
+        public void DeleteUser(int userID)
         {
             for (int i = 0; i < data.users.Count; i++)
             {
@@ -194,12 +194,12 @@ namespace DL
             throw new Exception("Event with such ID does not exist");
         }
 
-        private void decreaseCopies(int movieID)
+        public void decreaseCopies(int movieID)
         {
             data.dvds.Find(x => x.Movie.IMDB == movieID).AvailableCopies -= 1;
         }
 
-        private void increaseCopies(int movieID)
+        public void increaseCopies(int movieID)
         {
             data.dvds.Find(x => x.Movie.IMDB == movieID).AvailableCopies += 1;
         }
@@ -215,7 +215,7 @@ namespace DL
             }
             if (e.State == Event.EventState.Borrowed)
             {
-                decreaseCopies(e.MovieID);
+                // decreaseCopies(e.MovieID);
             }
             data.events.Add(e);
         }
@@ -265,6 +265,17 @@ namespace DL
         public int GetAvailableCopiesByIMDB(int IMDB)
         {
             return data.dvds.Find(x => x.Movie.IMDB == IMDB).AvailableCopies;
+        }
+
+        public void increaseDVD(int amount, Movie movie )
+        {
+            for (int i = 0; i < data.dvds.Count; i++)
+            {
+                if (data.dvds[i].Movie == movie)
+                {
+                    data.dvds[i].AvailableCopies += amount;
+                }
+            }
         }
 
         public void AddDVD(DVD dvd)

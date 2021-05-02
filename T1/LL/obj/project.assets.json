@@ -5,7 +5,9 @@
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETStandard,Version=v2.1": []
+    ".NETStandard,Version=v2.1": [
+      "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\glori\\.nuget\\packages\\": {}
@@ -13,9 +15,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\LL\\LL.csproj",
-      "projectName": "LL",
-      "projectPath": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\LL\\LL.csproj",
+      "projectUniqueName": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\LL\\Logic.csproj",
+      "projectName": "Logic",
+      "projectPath": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\LL\\Logic.csproj",
       "packagesPath": "C:\\Users\\glori\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\LL\\obj\\",
       "projectStyle": "PackageReference",
@@ -33,7 +35,11 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj": {
+              "projectPath": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -63,5 +69,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\glori\\Documents\\GitHub\\PT\\T1\\DL\\DL.csproj",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.1"
+      ]
+    }
+  ]
 }

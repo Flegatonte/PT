@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Data;
 using Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTests
+namespace UT
 {
 	[TestClass]
 	public class DataServiceTest
@@ -454,4 +454,4 @@ namespace UnitTests
 		}
 	}
 	*/
-	}
+}
