@@ -11,7 +11,7 @@ namespace DL
             // Generate users
             Movie movie1 = new Movie(32433234, "Maze Runner: The Death Cure", "Wyck Godfrey", 2018, Movie.MovieGenre.Action, 143);
             Movie movie2 = new Movie(93428837, "Sausage Party", "Greg Tiernan, Conrad Vernon", 2016, Movie.MovieGenre.Comedy, 89);
-            Movie movie3 = new Movie(45874956, "Pieces of a Woman", "Kornél Mundruczó", 2020, Movie.MovieGenre.Drama, 128);
+            Movie movie3 = new Movie(45874956, "Pieces of a Woman", "KornÃ©l MundruczÃ³", 2020, Movie.MovieGenre.Drama, 128);
             Movie movie4 = new Movie(79363296, "The Ring", "Gore Verbinski", 2002, Movie.MovieGenre.Horror, 115);
             Movie movie5 = new Movie(92835344, "Enola Holmes", "Harry Bradbeer", 2020, Movie.MovieGenre.Mystery, 123);
 
@@ -41,14 +41,7 @@ namespace DL
                 data.dvds.Add( new DVD(data.movies.movieCatalog[i], 10, 10));
             }
 
-            // Generate events
-            /*
-            Event event1 = new Event(102030, 32433234, 0000, new DateTime(2020, 12, 16, 12, 0, 0), Event.EventState.Borrowed);
-            Event event2 = new Event(102030, 32433234, 0001, new DateTime(2020, 11, 17, 13, 0, 0), Event.EventState.Borrowed);
-            Event event3 = new Event(102030, 32433234, 0002, new DateTime(2020, 10, 18, 14, 0, 0), Event.EventState.Borrowed);
-            Event event4 = new Event(102030, 32433234, 0003, new DateTime(2020, 9, 19, 15, 0, 0), Event.EventState.Borrowed);
-            Event event5 = new Event(102030, 32433234, 0004, new DateTime(2020, 8, 20, 16, 0, 0), Event.EventState.Borrowed);
-            */
+           
         }
     }
 }
