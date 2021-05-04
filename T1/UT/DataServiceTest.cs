@@ -115,7 +115,7 @@ namespace UT
 		public void AddMovieTest()
 		{
 			Assert.AreEqual(service.GetMoviesCount(), 5);
-			service.AddMovie(new Movie(92835345, "A Game of Thrones", "George R.R.Martin", 1996, Movie.MovieGenre.Action, 130));
+			service.AddMovie(new Movie(6, "A Game of Thrones", "George R.R.Martin", 1996, Movie.MovieGenre.Action, 130));
 
 			Assert.AreEqual(service.GetMoviesCount(), 6);
 		}
@@ -123,9 +123,8 @@ namespace UT
 		[TestMethod]
 		public void DeleteMovieTest()
 		{
-			Movie m = service.GetMovieIMDB(92835344);
 			Assert.AreEqual(service.GetMoviesCount(), 5);
-			service.DeleteMovie(m.IMDB);
+			service.DeleteMovie(1);
 			Assert.AreEqual(service.GetMoviesCount(), 4);
 		}
 

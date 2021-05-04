@@ -9,11 +9,11 @@ namespace DL
         public void GenarateData(Data data)
         {
             // Generate users
-            Movie movie1 = new Movie(32433234, "Maze Runner: The Death Cure", "Wyck Godfrey", 2018, Movie.MovieGenre.Action, 143);
-            Movie movie2 = new Movie(93428837, "Sausage Party", "Greg Tiernan, Conrad Vernon", 2016, Movie.MovieGenre.Comedy, 89);
-            Movie movie3 = new Movie(45874956, "Pieces of a Woman", "Kornél Mundruczó", 2020, Movie.MovieGenre.Drama, 128);
-            Movie movie4 = new Movie(79363296, "The Ring", "Gore Verbinski", 2002, Movie.MovieGenre.Horror, 115);
-            Movie movie5 = new Movie(92835344, "Enola Holmes", "Harry Bradbeer", 2020, Movie.MovieGenre.Mystery, 123);
+            Movie movie1 = new Movie(1, "Maze Runner: The Death Cure", "Wyck Godfrey", 2018, Movie.MovieGenre.Action, 143);
+            Movie movie2 = new Movie(2, "Sausage Party", "Greg Tiernan, Conrad Vernon", 2016, Movie.MovieGenre.Comedy, 89);
+            Movie movie3 = new Movie(3, "Pieces of a Woman", "Kornél Mundruczó", 2020, Movie.MovieGenre.Drama, 128);
+            Movie movie4 = new Movie(4, "The Ring", "Gore Verbinski", 2002, Movie.MovieGenre.Horror, 115);
+            Movie movie5 = new Movie(5, "Enola Holmes", "Harry Bradbeer", 2020, Movie.MovieGenre.Mystery, 123);
 
             data.movies.movieCatalog.Add(1, movie1);
             data.movies.movieCatalog.Add(2, movie2);

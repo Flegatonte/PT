@@ -48,10 +48,12 @@ namespace DL
             throw new Exception("There are no movies of this genre in the library.");
         }
 
+
         public void UpdateMovieInfo(Movie movie)
         {
             if (data.movies.movieCatalog.ContainsKey(movie.IMDB))
             {
+                
                 data.movies.movieCatalog[movie.IMDB].Title = movie.Title;
                 data.movies.movieCatalog[movie.IMDB].Director = movie.Director;
                 data.movies.movieCatalog[movie.IMDB].Year = movie.Year;
