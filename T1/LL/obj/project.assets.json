@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\LL\\LL.csproj",
+      "projectUniqueName": "C:\\Users\\glori\\source\\repos\\Flegatonte\\FPT\\T1\\LL\\LL.csproj",
       "projectName": "LL",
-      "projectPath": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\LL\\LL.csproj",
+      "projectPath": "C:\\Users\\glori\\source\\repos\\Flegatonte\\FPT\\T1\\LL\\LL.csproj",
       "packagesPath": "C:\\Users\\glori\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\LL\\obj\\",
+      "outputPath": "C:\\Users\\glori\\source\\repos\\Flegatonte\\FPT\\T1\\LL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\glori\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\DL\\DL.csproj": {
-              "projectPath": "C:\\Users\\glori\\source\\repos\\PT\\PTF\\T1\\DL\\DL.csproj"
+            "C:\\Users\\glori\\source\\repos\\Flegatonte\\FPT\\T1\\DL\\DL.csproj": {
+              "projectPath": "C:\\Users\\glori\\source\\repos\\Flegatonte\\FPT\\T1\\DL\\DL.csproj"
             }
           }
         }

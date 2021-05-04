@@ -16,10 +16,10 @@ namespace DL
             Movie movie5 = new Movie(92835344, "Enola Holmes", "Harry Bradbeer", 2020, Movie.MovieGenre.Mystery, 123);
 
             data.movies.movieCatalog.Add(1, movie1);
-            data.movies.movieCatalog.Add(1, movie2);
-            data.movies.movieCatalog.Add(1, movie3);
-            data.movies.movieCatalog.Add(1, movie4);
-            data.movies.movieCatalog.Add(1, movie5);
+            data.movies.movieCatalog.Add(2, movie2);
+            data.movies.movieCatalog.Add(3, movie3);
+            data.movies.movieCatalog.Add(4, movie4);
+            data.movies.movieCatalog.Add(5, movie5);
 
 
             // Generate users

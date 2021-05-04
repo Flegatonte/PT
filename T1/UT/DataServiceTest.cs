@@ -52,7 +52,7 @@ namespace UT
 		public void DeleteUserTest()
 		{
 			Assert.AreEqual(service.GetUsersCount(), 5);
-			service.DeleteUser(102036);
+			service.DeleteUser(102034);
 			Assert.AreEqual(service.GetUsersCount(), 4);
 		}
 
@@ -66,13 +66,13 @@ namespace UT
 		[TestMethod]
 		public void GetUserByIDTest()
 		{
-			User returnedUser = service.GetUserByID(102036);
+			User returnedUser = service.GetUserByID(102033);
 
 			Assert.IsNotNull(returnedUser);
-			Assert.AreEqual(returnedUser.UserID, 102036);
-			Assert.AreEqual(returnedUser.Name, "Andrea");
-			Assert.AreEqual(returnedUser.Surname, "Sannino");
-			Assert.AreEqual(returnedUser.PhoneNumber, "+39-845-5211-76");
+			Assert.AreEqual(returnedUser.UserID, 102033);
+			Assert.AreEqual(returnedUser.Name, "Jaromir");
+			Assert.AreEqual(returnedUser.Surname, "Gac");
+			Assert.AreEqual(returnedUser.PhoneNumber, "+48-855-5310-74");
 		}
 
 		[TestMethod]
@@ -89,7 +89,6 @@ namespace UT
 			List<User> allUsers = service.GetUsers();
 			Assert.AreEqual(allUsers.Count, 5);
 
-			Assert.IsTrue(allUsers.Exists(r => r.UserID == 102036));
 			Assert.IsTrue(allUsers.Exists(r => r.UserID == 102033));
 			Assert.IsTrue(allUsers.Exists(r => r.UserID == 102032));
 			Assert.IsFalse(allUsers.Exists(r => r.UserID == 102));
@@ -99,7 +98,7 @@ namespace UT
 		[TestMethod]
 		public void UpdateInfoAboutReaderTest()
 		{
-			User newUserData = new User("Andy", "Bassano", 102037, "+39-855-5200-76");
+			User newUserData = new User("Andy", "Bassano", 102030, "+39-855-5200-76");
 
 			Assert.AreEqual(service.GetUserByID(102030).PhoneNumber, "+48-885-5610-71");
 			Assert.AreEqual(service.GetUserByID(102030).Name, "Adam");
@@ -111,15 +110,12 @@ namespace UT
 		}
 		
 
-
-
-		
 		// Tests for movie catalog
 		[TestMethod]
 		public void AddMovieTest()
 		{
 			Assert.AreEqual(service.GetMoviesCount(), 5);
-			Movie movie5 = new Movie(92835345, "A Game of Thrones", "George R.R.Martin", 1996, Movie.MovieGenre.Action, 130);
+			service.AddMovie(new Movie(92835345, "A Game of Thrones", "George R.R.Martin", 1996, Movie.MovieGenre.Action, 130));
 
 			Assert.AreEqual(service.GetMoviesCount(), 6);
 		}
@@ -128,7 +124,7 @@ namespace UT
 		public void DeleteMovieTest()
 		{
 			Assert.AreEqual(service.GetMoviesCount(), 5);
-			service.DeleteMovie(32433234);
+			service.DeleteMovie(92835344);
 			Assert.AreEqual(service.GetMoviesCount(), 4);
 		}
 	}
