@@ -123,9 +123,29 @@ namespace UT
 		[TestMethod]
 		public void DeleteMovieTest()
 		{
+			Movie m = service.GetMovieIMDB(92835344);
 			Assert.AreEqual(service.GetMoviesCount(), 5);
-			service.DeleteMovie(92835344);
+			service.DeleteMovie(m.IMDB);
 			Assert.AreEqual(service.GetMoviesCount(), 4);
+		}
+
+		[TestMethod]
+		public void GetAllBooksTest()
+		{
+			Dictionary<int, Movie> allMovies = service.GetMovieCatalog();
+			Assert.AreEqual(allMovies.Count, 5);
+
+			Assert.IsTrue(allMovies.ContainsKey(1));
+			Assert.IsTrue(allMovies.ContainsKey(2));
+			Assert.IsTrue(allMovies.ContainsKey(3));
+			Assert.IsTrue(allMovies.ContainsKey(4));
+			Assert.IsTrue(allMovies.ContainsKey(5));
+
+			Assert.IsTrue(allMovies.ContainsValue(allMovies[1]));
+			Assert.IsTrue(allMovies.ContainsValue(allMovies[2]));
+			Assert.IsTrue(allMovies.ContainsValue(allMovies[3]));
+			Assert.IsTrue(allMovies.ContainsValue(allMovies[4]));
+			Assert.IsTrue(allMovies.ContainsValue(allMovies[5]));
 		}
 	}
 }
