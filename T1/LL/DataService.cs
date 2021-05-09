@@ -159,7 +159,7 @@ namespace LL
                         throw new InvalidOperationException("The movie is not available");
                     }
 
-                    Event e = new Event(userID, movieID, eventID, borrowDate, Event.EventState.Borrowed);
+                    IEvent e = new Event(userID, movieID, eventID, borrowDate, Event.EventState.Borrowed);
     dataManager.AddEvent(e);
     dataManager.decreaseCopies(movieID, 1);
                     // OnEventUpdateState(movieId, currentMovieState, user, true);
