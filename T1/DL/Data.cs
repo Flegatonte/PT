@@ -7,9 +7,9 @@ namespace DL
 {
     public class Data
     {
-        public List<User> users = new List<User>();
-        public MovieCatalog movies = new MovieCatalog();
-        public List<Event> events = new List<Event>();
-        public List<DVD> dvds = new List<DVD>();
+        public List<IUser> users = new List<IUser>();
+        public IMovieCatalog movies = new MovieCatalog();
+        public List<IEvent> events = new List<IEvent>();
+        public List<IDVD> dvds = new List<IDVD>();
     }
 }

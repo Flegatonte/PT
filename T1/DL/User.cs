@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DL
 {
-    public class User
+    public class User : IUser
     {
         public User(string name, string surname, int userID, string phoneNumber)
         {

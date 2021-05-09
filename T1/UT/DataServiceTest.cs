@@ -32,7 +32,7 @@ namespace UT
 
 			Assert.AreEqual(service.GetUsersCount(), 6);
 
-			List<User> users = service.GetUsers();
+			List<IUser> users = service.GetUsers();
 			Assert.AreEqual(users.Count, 6);
 			Assert.IsTrue(users.Exists(r => r.UserID == 102036));
 		}
@@ -66,7 +66,7 @@ namespace UT
 		[TestMethod]
 		public void GetUserByIDTest()
 		{
-			User returnedUser = service.GetUserByID(102033);
+			IUser returnedUser = service.GetUserByID(102033);
 
 			Assert.IsNotNull(returnedUser);
 			Assert.AreEqual(returnedUser.UserID, 102033);
@@ -86,7 +86,7 @@ namespace UT
 		[TestMethod]
 		public void GetAllUsersTest()
 		{
-			List<User> allUsers = service.GetUsers();
+			List<IUser> allUsers = service.GetUsers();
 			Assert.AreEqual(allUsers.Count, 5);
 
 			Assert.IsTrue(allUsers.Exists(r => r.UserID == 102033));
@@ -115,7 +115,7 @@ namespace UT
 		public void AddMovieTest()
 		{
 			Assert.AreEqual(service.GetMoviesCount(), 5);
-			service.AddMovie(new Movie(6, "A Game of Thrones", "George R.R.Martin", 1996, Movie.MovieGenre.Action, 130));
+			service.AddMovie(new Movie(6, "A Game of Thrones", "George R.R.Martin", 1996, IMovie.MovieGenre.Action, 130));
 
 			Assert.AreEqual(service.GetMoviesCount(), 6);
 		}
@@ -131,7 +131,7 @@ namespace UT
 		[TestMethod]
 		public void GetAllBooksTest()
 		{
-			Dictionary<int, Movie> allMovies = service.GetMovieCatalog();
+			Dictionary<int, IMovie> allMovies = service.GetMovieCatalog();
 			Assert.AreEqual(allMovies.Count, 5);
 
 			Assert.IsTrue(allMovies.ContainsKey(1));

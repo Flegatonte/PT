@@ -1,23 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static DL.IMovie;
 
 namespace DL
 {
-    public class Movie
+    public class Movie : IMovie
     {
-        public enum MovieGenre
-        {
-            Action,
-            Comedy,
-            Drama,
-            Fantasy,
-            Horror,
-            Mystery,
-            Romance,
-            Thriller,
-            Western
-        }
 
         public Movie(int IMDB, string title, string director, int year, MovieGenre genre, int duration)
         {

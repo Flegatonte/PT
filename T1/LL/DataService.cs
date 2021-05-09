@@ -15,9 +15,9 @@ namespace LL
         }
 
 
-        public Dictionary<int, Movie> GetMovieCatalog()
+        public Dictionary<int, IMovie> GetMovieCatalog()
         {
-            Dictionary<int, Movie> movies = dataManager.GetMovieCatalog();
+            Dictionary<int, IMovie> movies = dataManager.GetMovieCatalog();
          if (movies.Count == 0)
             {
                 return null;
@@ -33,9 +33,9 @@ namespace LL
                     return dataManager.GetMoviesCount();
                 }
 
-                public List<User> GetUsers()
+                public List<IUser> GetUsers()
                 {
-                    List<User> users = dataManager.GetUsers();
+                    List<IUser> users = dataManager.GetUsers();
                     if (users.Count == 0)
                     {
                         return null;
@@ -50,9 +50,9 @@ namespace LL
                     return dataManager.GetUsersCount();
                 }
 
-                public List<Event> GetAllEvents()
+                public List<IEvent> GetAllEvents()
                 {
-                    List<Event> events = dataManager.GetAllEvents();
+                    List<IEvent> events = dataManager.GetAllEvents();
                     if (events.Count == 0)
                     {
                         return null;
@@ -67,49 +67,49 @@ namespace LL
             return dataManager.GetEventsCount();
         }
     
-        public Movie GetMovieIMDB(int id)
+        public IMovie GetMovieIMDB(int id)
         {
             return dataManager.GetMovieIMDB(id);
         }
 
-        public List<Movie> GetMoviesGenre(Movie.MovieGenre genre)
+        public List<IMovie> GetMoviesGenre(IMovie.MovieGenre genre)
         {
             return dataManager.GetMoviesGenre(genre);
         }
 
-        public User GetUserByID(int id)
+        public IUser GetUserByID(int id)
         {
             return dataManager.GetUserByID(id);
         }
 
-        public Event GetEventByID(int id)
+        public IEvent GetEventByID(int id)
         {
             return dataManager.GetEventByID(id);
         }
 
         
-        public void AddMovie(Movie movie)
+        public void AddMovie(IMovie movie)
         {
     dataManager.AddMovie(movie);
         }
 
-        public void AddUser(User user)
+        public void AddUser(IUser user)
         {
     dataManager.AddUser(user);
         }
 
         
-        public void EditMovie(Movie movie)
+        public void EditMovie(IMovie movie)
         {
     dataManager.UpdateMovieInfo(movie);
         }
 
-        public void EditUser(User user)
+        public void EditUser(IUser user)
         {
     dataManager.UpdateUserInfo(user);
         }
 
-        public void EditEvent(Event e)
+        public void EditEvent(IEvent e)
         {
     dataManager.UpdateEventInfo(e);
         }
@@ -129,7 +129,7 @@ namespace LL
     dataManager.increaseCopies(IMBD, amount);
         }
 
-        public List<DVD> GetAllAvailables()
+        public List<IDVD> GetAllAvailables()
         {
             return dataManager.GetAvailableDVDs();
         }
@@ -139,12 +139,12 @@ namespace LL
             return dataManager.GetAvailableCopiesByIMDB(IMBD);
         }
 
-        public void AddDVD(DVD dvd)
+        public void AddDVD(IDVD dvd)
         {
     dataManager.AddDVD(dvd);
         }
 
-        public void DeleteDVD(DVD dvd)
+        public void DeleteDVD(IDVD dvd)
         {
     dataManager.DeleteDVD(dvd);
         }
@@ -175,7 +175,7 @@ namespace LL
                 throw new InvalidOperationException("The movie is not available");
             }
 
-            Event e = new Event(userID, movieID, eventID, borrowDate, Event.EventState.Borrowed);
+            IEvent e = new Event(userID, movieID, eventID, borrowDate, Event.EventState.Borrowed);
             dataManager.UpdateEventInfo(e);
     dataManager.increaseCopies(movieID, 1);
     // OnEventUpdateState(movieId, currentMovieState, user, true);
@@ -183,10 +183,10 @@ namespace LL
 
   
         
-        public IEnumerable<Event> GetEventsForUser(int userID)
+        public IEnumerable<IEvent> GetEventsForUser(int userID)
         {
             var user = dataManager.GetUserByID(userID);
-            List<Event> events = new List<Event>();
+            List<IEvent> events = new List<IEvent>();
 
             foreach (Event ev in dataManager.GetAllEvents())
             {
@@ -198,11 +198,11 @@ namespace LL
             return events;
         }
         
-        public IEnumerable<Event> GetEventsBetweenDates(DateTime start, DateTime end)
+        public IEnumerable<IEvent> GetEventsBetweenDates(DateTime start, DateTime end)
         {
-            List<Event> events = new List<Event>();
+            List<IEvent> events = new List<IEvent>();
 
-            foreach (Event ev in dataManager.GetAllEvents())
+            foreach (IEvent ev in dataManager.GetAllEvents())
             {
                 if (ev.Date >= start && ev.Date <= end)
                 {

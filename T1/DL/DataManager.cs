@@ -14,7 +14,7 @@ namespace DL
         }
 
         // Getting movie catalog
-        public Dictionary<int, Movie> GetMovieCatalog()
+        public Dictionary<int, IMovie> GetMovieCatalog()
         {
             return data.movies.movieCatalog;
         }
@@ -24,7 +24,7 @@ namespace DL
             return data.movies.movieCatalog.Count;
         }
 
-        public Movie GetMovieIMDB(int IMDB)
+        public IMovie GetMovieIMDB(int IMDB)
         {
             if (data.movies.movieCatalog.ContainsKey(IMDB))
             {
@@ -33,11 +33,11 @@ namespace DL
             throw new Exception("Book with such IMDB does not exist in the archive");
         }
 
-        public List<Movie> GetMoviesGenre(Movie.MovieGenre genre)
+        public List<IMovie> GetMoviesGenre(IMovie.MovieGenre genre)
         {
             foreach (var movie in data.movies.movieCatalog)
             {
-                List<Movie> res = new List<Movie>();
+                List<IMovie> res = new List<IMovie>();
 
                 if (movie.Value.Genre == genre)
                 {
@@ -49,7 +49,7 @@ namespace DL
         }
 
 
-        public void UpdateMovieInfo(Movie movie)
+        public void UpdateMovieInfo(IMovie movie)
         {
             if (data.movies.movieCatalog.ContainsKey(movie.IMDB))
             {
@@ -66,7 +66,7 @@ namespace DL
             }
         }
 
-        public void AddMovie(Movie movie)
+        public void AddMovie(IMovie movie)
         {
             if (data.movies.movieCatalog.ContainsKey(movie.IMDB))
             {
@@ -88,7 +88,7 @@ namespace DL
         }
 
         // Users methods 
-        public List<User> GetUsers()
+        public List<IUser> GetUsers()
         {
             return data.users;
         }
@@ -98,7 +98,7 @@ namespace DL
             return data.users.Count;
         }
 
-        public User GetUserByID(int ID)
+        public IUser GetUserByID(int ID)
         {
             for (int i = 0; i < data.users.Count; i++)
             {
@@ -110,7 +110,7 @@ namespace DL
             throw new Exception("User with such ID does not exist");
         }
 
-        public void UpdateUserInfo(User user)
+        public void UpdateUserInfo(IUser user)
         {
             for (int i = 0; i < data.users.Count; i++)
             {
@@ -126,7 +126,7 @@ namespace DL
             throw new InvalidOperationException("Such user ID does not exist in the library");
         }
 
-        public void AddUser(User user)
+        public void AddUser(IUser user)
         {
             for (int i = 0; i < data.users.Count; i++)
             {
@@ -174,7 +174,7 @@ namespace DL
         }
 
         // Methods for events
-        public List<Event> GetAllEvents()
+        public List<IEvent> GetAllEvents()
         {
             return data.events;
         }
@@ -184,7 +184,7 @@ namespace DL
             return data.events.Count;
         }
 
-        public Event GetEventByID(int eventID)
+        public IEvent GetEventByID(int eventID)
         {
             for (int i = 0; i < data.events.Count; i++)
             {
@@ -206,7 +206,7 @@ namespace DL
             data.dvds.Find(x => x.Movie.IMDB == movieID).AvailableCopies += amount;
         }
 
-        public void AddEvent(Event e)
+        public void AddEvent(IEvent e)
         {
             for (int i = 0; i < data.events.Count; i++)
             {
@@ -235,7 +235,7 @@ namespace DL
             throw new InvalidOperationException("Event with such ID does not exist!");
         }
 
-        public void UpdateEventInfo(Event e)
+        public void UpdateEventInfo(IEvent e)
         {
             for (int i = 0; i < data.events.Count; i++)
             {
@@ -254,12 +254,12 @@ namespace DL
         }
 
         // DVDs
-        public List<DVD> GetAvailableDVDs()
+        public List<IDVD> GetAvailableDVDs()
         {
             return data.dvds.FindAll(x => x.AvailableCopies > 0);
         }
 
-        public List<DVD> GetDVDs()
+        public List<IDVD> GetDVDs()
         {
             return data.dvds;
         }
@@ -269,7 +269,7 @@ namespace DL
             return data.dvds.Find(x => x.Movie.IMDB == IMDB).AvailableCopies;
         }
 
-        public void increaseDVD(int amount, Movie movie )
+        public void increaseDVD(int amount, IMovie movie )
         {
             for (int i = 0; i < data.dvds.Count; i++)
             {
@@ -280,7 +280,7 @@ namespace DL
             }
         }
 
-        public void AddDVD(DVD dvd)
+        public void AddDVD(IDVD dvd)
         {
             if (data.dvds.Contains(dvd))
             {
@@ -289,7 +289,7 @@ namespace DL
             data.dvds.Add(dvd);
         }
 
-        public void DeleteDVD(DVD dvd)
+        public void DeleteDVD(IDVD dvd)
         {
             if (!data.dvds.Contains(dvd))
             {

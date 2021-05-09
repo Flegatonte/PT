@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DL
 {
-    public class Event
+    public class Event : IEvent
     {
         public enum EventState
         {

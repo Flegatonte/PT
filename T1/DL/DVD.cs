@@ -4,13 +4,13 @@ using System.Text;
 
 namespace DL
 {
-    public class DVD
+    public class DVD : IDVD
     {
-        public Movie Movie { get; set; }
+        public IMovie Movie { get; set; }
         public int AvailableCopies { get; set; }
         public int TotalCopies { get; set; }
 
-        public DVD (Movie movie, int availableCopies, int totalCopies)
+        public DVD (IMovie movie, int availableCopies, int totalCopies)
         {
             Movie = movie;
             AvailableCopies = availableCopies;
