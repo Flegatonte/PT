@@ -6,9 +6,9 @@ namespace DL
 {
     public class DataManager : IDataManager
     {
-        private Data data;
+        private IData data;
 
-        public DataManager(Data data)
+        public DataManager(IData data)
         {
             this.data = data;
         }

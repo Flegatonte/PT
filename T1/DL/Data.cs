@@ -5,11 +5,8 @@ using System.Collections.ObjectModel;
 
 namespace DL
 {
-    public class Data
+    public class Data : IData
     {
-        public List<IUser> users = new List<IUser>();
-        public IMovieCatalog movies = new MovieCatalog();
-        public List<IEvent> events = new List<IEvent>();
-        public List<IDVD> dvds = new List<IDVD>();
+
     }
 }

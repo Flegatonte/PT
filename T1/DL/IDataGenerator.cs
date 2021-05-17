@@ -6,6 +6,6 @@ namespace DL
 {
     public interface IDataGenerator
     {
-        void GenarateData(Data data);
+        void GenarateData(IData data);
     }
 }

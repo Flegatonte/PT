@@ -10,19 +10,19 @@ namespace UT
 	public class DataServiceTest
 	{
 		private DataService service;
-		private Data data;
+		private IData data;
 		private IDataGenerator generator;
 
 		[TestInitialize]
 		public void Initialize()
 		{
-			data = new Data();
+			data = IData.getData();
 			service = new DataService(new DataManager(data));
 			generator = new DataGenerator();
 			generator.GenarateData(data);
 		}
 
-		// Test for readers
+		// Test for users
 		[TestMethod]
 		public void AddUserTest()
 		{
@@ -96,7 +96,7 @@ namespace UT
 
 
 		[TestMethod]
-		public void UpdateInfoAboutReaderTest()
+		public void UpdateInfoAboutUserTest()
 		{
 			User newUserData = new User("Andy", "Bassano", 102030, "+39-855-5200-76");
 
@@ -117,7 +117,7 @@ namespace UT
 			Assert.AreEqual(service.GetMoviesCount(), 5);
 			service.AddMovie(new Movie(6, "A Game of Thrones", "George R.R.Martin", 1996, IMovie.MovieGenre.Action, 130));
 
-			Assert.AreEqual(service.GetMoviesCount(), 6);
+            Assert.AreEqual(service.GetMoviesCount(), 6);
 		}
 
 		[TestMethod]
@@ -129,7 +129,7 @@ namespace UT
 		}
 
 		[TestMethod]
-		public void GetAllBooksTest()
+		public void GetAllMoviesTest()
 		{
 			Dictionary<int, IMovie> allMovies = service.GetMovieCatalog();
 			Assert.AreEqual(allMovies.Count, 5);

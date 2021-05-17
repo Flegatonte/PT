@@ -18,17 +18,14 @@ namespace DL
             Duration = duration;
         }
 
+        /*
         public int IMDB { get; set; }
-
         public string Title { get; set; }
-
         public string Director { get; set; }
-
         public int Year { get; set; }
-
         public MovieGenre Genre { get; set; }
-
         public int Duration { get; set; }
+        */
 
         public override bool Equals(object obj)
         {

@@ -6,9 +6,11 @@ namespace DL
 {
     public class DVD : IDVD
     {
+        /*
         public IMovie Movie { get; set; }
         public int AvailableCopies { get; set; }
         public int TotalCopies { get; set; }
+        */
 
         public DVD (IMovie movie, int availableCopies, int totalCopies)
         {

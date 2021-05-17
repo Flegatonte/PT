@@ -5,7 +5,7 @@ using static DL.Movie;
 
 namespace DL
 {
-    public interface IMovie
+    public abstract class IMovie
     {
         public enum MovieGenre
         {
@@ -30,5 +30,10 @@ namespace DL
         public MovieGenre Genre { get; set; }
 
         public int Duration { get; set; }
+
+        public static IMovie returnMovie(int IMDB, string title, string director, int year, MovieGenre genre, int duration)
+        {
+            return new Movie(IMDB, title, director, year, genre, duration);
+        }
     }
 }

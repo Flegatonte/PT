@@ -5,12 +5,17 @@ using static DL.Event;
 
 namespace DL
 {
-    public interface IEvent
+    public abstract class IEvent
     {
         public int UserID { get; set; }
         public int MovieID { get; set; }
         public int EventID { get; set; }
         public DateTime Date { get; set; }
         public EventState State { get; set; }
+
+        public static Event returnEvent(int userID, int movieID, int eventID, DateTime date, EventState eventState)
+        {
+            return new Event(userID, movieID, eventID, date, eventState); 
+        }
     }
 }

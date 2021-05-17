@@ -175,7 +175,7 @@ namespace LL
                 throw new InvalidOperationException("The movie is not available");
             }
 
-            IEvent e = new Event(userID, movieID, eventID, borrowDate, Event.EventState.Borrowed);
+            IEvent e = IEvent.returnEvent(userID, movieID, eventID, borrowDate, Event.EventState.Borrowed);
             dataManager.UpdateEventInfo(e);
     dataManager.increaseCopies(movieID, 1);
     // OnEventUpdateState(movieId, currentMovieState, user, true);
@@ -188,7 +188,7 @@ namespace LL
             var user = dataManager.GetUserByID(userID);
             List<IEvent> events = new List<IEvent>();
 
-            foreach (Event ev in dataManager.GetAllEvents())
+            foreach (IEvent ev in dataManager.GetAllEvents())
             {
                 if (ev.UserID.Equals(user))
                 {
