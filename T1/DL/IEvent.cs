@@ -13,7 +13,13 @@ namespace DL
         public DateTime Date { get; set; }
         public EventState State { get; set; }
 
-        public static Event returnEvent(int userID, int movieID, int eventID, DateTime date, EventState eventState)
+        public enum EventState
+        {
+            Returned,
+            Borrowed
+        }
+
+        public static IEvent returnEvent(int userID, int movieID, int eventID, DateTime date, EventState eventState)
         {
             return new Event(userID, movieID, eventID, date, eventState); 
         }
