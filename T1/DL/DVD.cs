@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DL
 {
-    public class DVD : IDVD
+    internal class DVD : IDVD
     {
         /*
         public IMovie Movie { get; set; }

@@ -5,7 +5,7 @@ using static DL.IMovie;
 
 namespace DL
 {
-    public class Movie : IMovie
+    internal class Movie : IMovie
     {
 
         public Movie(int IMDB, string title, string director, int year, MovieGenre genre, int duration)

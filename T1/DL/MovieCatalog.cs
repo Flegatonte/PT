@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DL
 {
-    public class MovieCatalog : IMovieCatalog
+    internal class MovieCatalog : IMovieCatalog
     {
         public Dictionary<int, IMovie> movieCatalog { get; set; } = new Dictionary<int, IMovie>();
     }

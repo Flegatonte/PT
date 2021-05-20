@@ -10,16 +10,15 @@ namespace UT
 	public class DataServiceTest
 	{
 		private DataService service;
-		private IData data;
-		private IDataGenerator generator;
+		private DataGenerator generator;
 
 		[TestInitialize]
 		public void Initialize()
 		{
-			data = IData.getData();
-			service = new DataService(new DataManager(data));
+			IDataManager manager = IDataManager.returnDataManager();
+			service = new DataService(manager);
 			generator = new DataGenerator();
-			generator.GenarateData(data);
+			generator.genarateData(manager.getData());
 		}
 
 		// Test for users
@@ -28,7 +27,7 @@ namespace UT
 		{
 			Assert.AreEqual(service.GetUsersCount(), 5);
 
-			service.AddUser(new User("Andrea", "Sannino", 102036, "+39-845-5211-76"));
+			service.AddUser(IUser.returnUser("Andrea", "Sannino", 102036, "+39-845-5211-76"));
 
 			Assert.AreEqual(service.GetUsersCount(), 6);
 
@@ -43,8 +42,8 @@ namespace UT
 		[ExpectedException(typeof(System.Exception))]
 		public void AddReaderReapetedIDTest()
 		{
-			service.AddUser(new User("Vania", "Basso", 102036, "+39-845-5211-76"));
-			service.AddUser(new User("Manfredi", "Sannino", 102036, "+39-845-5211-76"));
+			service.AddUser(IUser.returnUser("Vania", "Basso", 102036, "+39-845-5211-76"));
+			service.AddUser(IUser.returnUser("Manfredi", "Sannino", 102036, "+39-845-5211-76"));
 			Assert.AreEqual(service.GetUsersCount(), 6);
 		}
 
@@ -98,7 +97,7 @@ namespace UT
 		[TestMethod]
 		public void UpdateInfoAboutUserTest()
 		{
-			User newUserData = new User("Andy", "Bassano", 102030, "+39-855-5200-76");
+			IUser newUserData = IUser.returnUser("Andy", "Bassano", 102030, "+39-855-5200-76");
 
 			Assert.AreEqual(service.GetUserByID(102030).PhoneNumber, "+48-885-5610-71");
 			Assert.AreEqual(service.GetUserByID(102030).Name, "Adam");
@@ -115,7 +114,7 @@ namespace UT
 		public void AddMovieTest()
 		{
 			Assert.AreEqual(service.GetMoviesCount(), 5);
-			service.AddMovie(new Movie(6, "A Game of Thrones", "George R.R.Martin", 1996, IMovie.MovieGenre.Action, 130));
+			service.AddMovie(IMovie.returnMovie(6, "A Game of Thrones", "George R.R.Martin", 1996, IMovie.MovieGenre.Action, 130));
 
             Assert.AreEqual(service.GetMoviesCount(), 6);
 		}
