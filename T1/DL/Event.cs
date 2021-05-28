@@ -6,11 +6,7 @@ namespace DL
 {
     internal class Event : IEvent
     {
-        public enum EventState
-        {
-            Returned,
-            Borrowed
-        }
+        
 
         /*
         public int UserID { get; set; }
