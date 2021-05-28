@@ -4,10 +4,11 @@ using System.Text;
 
 namespace DL
 {
-    public class DataGenerator : IDataGenerator
+    public class DataGenerator 
     {
-        public void GenarateData(IData data)
+        public void genarateData(IData data)
         {
+
             // Generate movies
             IMovie movie1 = IMovie.returnMovie(1, "Maze Runner: The Death Cure", "Wyck Godfrey", 2018, IMovie.MovieGenre.Action, 143);
             IMovie movie2 = IMovie.returnMovie(2, "Sausage Party", "Greg Tiernan, Conrad Vernon", 2016, IMovie.MovieGenre.Comedy, 89);

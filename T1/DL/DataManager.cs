@@ -4,14 +4,15 @@ using System.Text;
 
 namespace DL
 {
-    public class DataManager : IDataManager
+    internal class DataManager : IDataManager
     {
-        private IData data;
+        private IData data = new Data();
 
-        public DataManager(IData data)
+        public IData getData()
         {
-            this.data = data;
+            return data;
         }
+
 
         // Getting movie catalog
         public Dictionary<int, IMovie> GetMovieCatalog()

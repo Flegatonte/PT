@@ -8,6 +8,14 @@ namespace DL
 {
     public interface IDataManager
     {
+        public static IDataManager returnDataManager()
+        {
+            return new DataManager();
+        }
+
+        // Data
+        public IData getData();
+
         // Movies
         public Dictionary<int, IMovie> GetMovieCatalog();
         public int GetMoviesCount();

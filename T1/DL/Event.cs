@@ -6,17 +6,8 @@ namespace DL
 {
     internal class Event : IEvent
     {
-        
 
-        /*
-        public int UserID { get; set; }
-        public int MovieID { get; set; }
-        public int EventID { get; set; }
-        public DateTime Date { get; set; }
-        public EventState State { get; set; }
-        */
-
-        public Event(int userID, int movieID, int eventID, DateTime date, EventState eventState)
+        public Event(int userID, int movieID, int eventID, DateTime date, IEvent.EventState eventState)
         {
             UserID = userID;
             MovieID = movieID;

@@ -7,5 +7,10 @@ namespace DL
     public interface IMovieCatalog
     {
         public Dictionary<int, IMovie> movieCatalog { get; set; }
+
+        public static IMovieCatalog returnMovieCatalog()
+        {
+            return new MovieCatalog();
+        }
     }
 }
