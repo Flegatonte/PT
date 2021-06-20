@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LibraryDatabase" Class="LibraryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ZYKSEL\SQLEXPRESS;Initial Catalog=LibraryDatabase;Integrated Security=True" SettingsObjectName="Data.Properties.Settings" SettingsPropertyName="LibraryDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Books" Member="Books">
+    <Type Name="Books">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isAvailable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Book_Event" Member="Events" ThisKey="id" OtherKey="book_id" Type="Events" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Events" Member="Events">
+    <Type Name="Events">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="book_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="reader_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Book_Event" Member="Books" ThisKey="book_id" OtherKey="id" Type="Books" IsForeignKey="true" />
+      <Association Name="Reader_Event" Member="Readers" ThisKey="reader_id" OtherKey="id" Type="Readers" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Readers" Member="Readers">
+    <Type Name="Readers">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Reader_Event" Member="Events" ThisKey="id" OtherKey="reader_id" Type="Events" />
+    </Type>
+  </Table>
+</Database>
